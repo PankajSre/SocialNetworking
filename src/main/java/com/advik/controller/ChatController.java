@@ -20,8 +20,7 @@ public class ChatController {
 	@RequestMapping(value="/application",method=RequestMethod.POST)
     public String chat(ModelMap map,Principal principal)
     {
-		String name=principal.getName();
-		map.addAttribute("myName", name);
+
     	return "application";
     }
 }

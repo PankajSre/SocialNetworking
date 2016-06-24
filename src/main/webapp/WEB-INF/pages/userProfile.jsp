@@ -1,4 +1,8 @@
 <%@ include file="header.jsp" %>
+<script type="text/javascript">
+noty('<a href="http://www.jqueryscript.net/tags.php?/Notification/">Notification</a> Title','Message Body');
+</script>
+
 <div class="ContentWrapper">
     <div class="contenttopCurve"></div>
     <div class="ContentMiddleTile">
@@ -9,20 +13,30 @@
           <div class="StoreCataloge">
             <h2>Quick Links</h2>
             <ul>
-              <li><a href="#">Home</a></li>
-              <li><a href="#">About Us</a></li>
+              <li><a href="createForum">New Forum</a></li>
+              <li><a href="forumPage">All Forum</a></li>
+              <li><a href="viewForum">My Forum</a></li>
               <li><a href="#">Services</a></li>
-              <li><a href="#">Portfolio</a></li>
-              <li><a href="post">Post A Comment</a></li>
-              <li><a href="#">Vision</a></li>
+              <li><a href="editUser">Update Profile</a></li>
+              <li><a href="post">All Posts</a></li>
+              <li><a href="newPost">New Posts</a></li>
               <li><a href="Chat">Chat</a></li>
             </ul>
 			<br><br>
 			<div class="StoreCataloge">
             <h2>Current News</h2>
-			<table height=150 width=182 border=1>
-			
-			</table>
+			<div style="height: 150px;width: 179px; border:1px solid blue; ">
+			<marquee  scrollamount="2" direction="up" loop="true" onmouseover="stop()" onmouseout="start()">
+			<p>Your test has been scheduled</p>
+			<p>Get In touch with friends</p>
+			<p>Check your Test Score</p>
+			<p>Manage your Performance</p>
+			<p>Participate in Quizes</p>
+			<p>Earn with referals</p>
+			<p>NITET on 25th January</p>
+			<p>Bhavishya Jyoti Schollarship</p>
+			</marquee>
+			</div>
 			</div>
           </div>
           <!--Store Catalog End-->
@@ -35,12 +49,11 @@
          
           <!--Product Listing Pane Begin-->
           <div class="ProduListingPane">
-            <h1>About Us</h1>
+            <h1>Welcome Dear : ${pageContext.request.userPrincipal.name}</h1>
             <!--Procuct Box Begin-->
             <div class="ProductBoxWrapper">
  
-             
-            
+           
             </div>
             <!--Procuct Box End-->
           </div>
@@ -53,4 +66,7 @@
              </div>
     </div>
     
+</div>
+<div class="ContentFooter">
+<%@ include file="footer.jsp" %>
 </div>

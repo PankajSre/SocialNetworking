@@ -5,8 +5,8 @@ table {
     border-collapse: collapse;
     border-spacing: 0;
     width: 100%;
-    border: 1px solid #ddd;
     display: block;
+    padding-left: 100px;
 }
 
 th, td {
@@ -23,9 +23,7 @@ tr:nth-child(even){background-color: #f2f2f2}
 	<div class="table responsive">
 		<div class="table" style="overflow-x:auto;">
 			<div style="height: 50px; padding-left: 200px; width: 500px;">
-				<label>Search Element <input type="text" id="search"
-					data-ng-model="search" value="${param.item}"
-					data-ng-init="search='${param.item}'"></label>
+				<label>Search Users <input type="text" id="search"></label>
 			</div>
 			<br>
 
@@ -85,16 +83,8 @@ tr:nth-child(even){background-color: #f2f2f2}
 								<td><c:out value=" ${user.mobile}"></c:out></td>
 								<td><c:out value=" ${user.address}"></c:out></td>
 								<td><img src="<c:url value='/resources/images/${user.username }.png' />" height="50" width="50" /></td>
-								 <td><a
-									href="<spring:url value="/viewUser?userid=${user.userid}" />"
-									class="btn btn-info"> <span
-										class="glyphicon-info-sign glyphicon"> </span> Details
-								</a> 
-										<a
-											href="<spring:url value="/editUser?userid=${user.userid}" />"
-											class="btn btn-danger"> <span
-											class="glyphicon-info-sign glyphicon"> </span> Update
-										</a>
+								 <td>
+										
 										<a
 											href="<spring:url value="/deleteUser?userid=${user.userid}" />"
 											class="btn btn-warning"> <span

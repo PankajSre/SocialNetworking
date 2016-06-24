@@ -1,17 +1,18 @@
 <%@ include file="header.jsp" %>
-<script type="text/javascript" src="${pageContext.request.contextPath}/resources/chat/js/cometd.js"></script>
-<script type="text/javascript" src="${pageContext.request.contextPath}/resources/chat/js/cometd/AckExtension.js"></script>
-<script type="text/javascript" src="${pageContext.request.contextPath}/resources/chat/js/cometd/TimeStampExtension.js"></script>
-<script type="text/javascript" src="${pageContext.request.contextPath}/resources/chat/js/cometd/TimeSyncExtension.js"></script>
-<script type="text/javascript" src="${pageContext.request.contextPath}/resources/chat/js/cometd/ReloadExtension.js"></script>
-<script type="text/javascript" src="${pageContext.request.contextPath}/resources/chat/js/jquery-1.8.2.js"></script>
-<script type="text/javascript" src="${pageContext.request.contextPath}/resources/chat/js/jquery.cookie.js"></script>
-<script type="text/javascript" src="${pageContext.request.contextPath}/resources/chat/js/jquery.cometd.js"></script>
-<script type="text/javascript" src="${pageContext.request.contextPath}/resources/chat/js/jquery.cometd-reload.js"></script>
-<script type="text/javascript" src="${pageContext.request.contextPath}/resources/chat/js/chat.window.js"></script>
-<script type="text/javascript" src="${pageContext.request.contextPath}/resources/chat/js/comet.chat.js"></script>
+<script type="text/javascript" src="${pageContext.request.contextPath}/resources/js/cometd.js"></script>
+<script type="text/javascript" src="${pageContext.request.contextPath}/resources/js/cometd/AckExtension.js"></script>
+<script type="text/javascript" src="${pageContext.request.contextPath}/resources/js/cometd/TimeStampExtension.js"></script>
+<script type="text/javascript" src="${pageContext.request.contextPath}/resources/js/cometd/TimeSyncExtension.js"></script>
+<script type="text/javascript" src="${pageContext.request.contextPath}/resources/js/cometd/ReloadExtension.js"></script>
+<script type="text/javascript" src="${pageContext.request.contextPath}/resources/jquery/jquery-1.8.2.js"></script>
+<script type="text/javascript" src="${pageContext.request.contextPath}/resources/jquery/jquery.cookie.js"></script>
+<script type="text/javascript" src="${pageContext.request.contextPath}/resources/jquery/jquery.cometd.js"></script>
+<script type="text/javascript" src="${pageContext.request.contextPath}/resources/jquery/jquery.cometd-reload.js"></script>
+<script type="text/javascript" src="${pageContext.request.contextPath}/resources/js/chat.window.js"></script>
+<script type="text/javascript" src="${pageContext.request.contextPath}/resources/js/comet.chat.js"></script>
 <script type="text/javascript">
-var chatWindowArray = [];
+    
+    var chatWindowArray = [];
     
     var config = {
         contextPath: '${pageContext.request.contextPath}'
@@ -63,15 +64,15 @@ var chatWindowArray = [];
 <link type="text/css" rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/comet.chat.css"/>
 </head>
 <body>
-
 <script type="text/javascript">
-	<%-- var userName = '<%=request.getParameter("username")%>'; --%>
-	var userName='${myName}';
+	var userName = '<%=request.getParameter("username")%>';
 	$(document).ready(function(){ 
 		$.cometChat.onLoad({memberListContainerID:'members'});
 		join(userName);
 	});
 </script>
-<div id="members"></div>
-</body>
-</html>
+
+<div class="StoreCataloge" style="padding-left: 100px;" >
+            <h2>Online Users</h2>
+			<div id="members" style="border: 3px solid blue; height: 200px;width: 180px;"></div>
+</div>

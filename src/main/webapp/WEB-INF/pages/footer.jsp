@@ -2,7 +2,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-sm-6">
-                    &copy; 2016  All Rights Reserved.
+                    &copy; 2016 NIIT Student Portal | All Rights Reserved.
                 </div>
                 <div class="col-sm-6">
                     <ul class="pull-right">

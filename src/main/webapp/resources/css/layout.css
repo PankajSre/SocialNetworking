@@ -192,7 +192,7 @@ button span span
 }
 .ContentWrapper
 {	background:url(../images/icons/middle_content_top_shadow.gif) repeat-x top left;
-	width:1024px;
+	width:auto;
 	float:left;
 	margin-left:1px;
 	padding:12px 0px 0px 0px;
@@ -200,12 +200,12 @@ button span span
 .contenttopCurve
 {	background:url(../images/icons/middle_content_top_curve.gif) no-repeat top left;
 	height:10px;
-	width:1024px;
+	width:auto;
 	float:left;
 }
 .ContentMiddleTile
 {	background:url(../images/icons/middle_content_middle_tile.gif) repeat-y top left;
-	width:1024px;
+	width:auto;
 	float:left;
 }
 .ContentInnerWrapper.onecoloum

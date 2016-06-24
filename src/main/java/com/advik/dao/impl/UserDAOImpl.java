@@ -28,7 +28,22 @@ public class UserDAOImpl implements UserDAO {
 
 	
 	public void editUser(User user) {
-	sessionFactory.getCurrentSession().update(user);
+		/*Session s=sessionFactory.openSession();
+		Transaction t=s.beginTransaction();
+		User us=(User)s.get(User.class, new Integer(user.getUserid()));
+		us.setUserid(user.getUserid());
+		us.setUsername(user.getUsername());
+		us.setPassword(user.getPassword());
+		us.setEmail(user.getEmail());
+		us.setMobile(user.getMobile());
+		us.setAddress(user.getAddress());
+		us.setImage(user.getImage());
+		s.saveOrUpdate(us);
+		s.flush();
+		t.commit();
+		s.close();*/
+		
+		sessionFactory.getCurrentSession().saveOrUpdate(user);
 		
 	}
 
@@ -61,7 +76,7 @@ public class UserDAOImpl implements UserDAO {
 
 	public User getUser(String username) {
 		
-		return (User)sessionFactory.getCurrentSession().get(User.class, username);
+		/*return (User)sessionFactory.getCurrentSession().get(User.class, username);*/
 		
 		/*Session session=sessionFactory.openSession();
 		Transaction t=session.beginTransaction();
@@ -72,9 +87,9 @@ public class UserDAOImpl implements UserDAO {
 		session.close();
 		return u;*/
 		
-		/* Criteria criteria = sessionFactory.getCurrentSession().createCriteria(User.class);
+		    Criteria criteria = sessionFactory.getCurrentSession().createCriteria(User.class);
 	        criteria.add(Restrictions.like("username", username));
-	        return (User) criteria.uniqueResult();*/
+	        return (User) criteria.uniqueResult();
 	}
 
 }

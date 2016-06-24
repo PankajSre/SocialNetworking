@@ -14,15 +14,14 @@ public class Post {
 	private String title;
 	private String content;
 	private Date date;
-	private int user_id;
-	private String user_username;
+	private String postUser;
 
-	public String getUser_username() {
-		return user_username;
+	public String getPostUser() {
+		return postUser;
 	}
 
-	public void setUser_username(String user_username) {
-		this.user_username = user_username;
+	public void setPostUser(String postUser) {
+		this.postUser = postUser;
 	}
 
 	public int getId() {
@@ -57,11 +56,4 @@ public class Post {
 		this.date = date;
 	}
 
-	public int getUser_id() {
-		return user_id;
-	}
-
-	public void setUser_id(int user_id) {
-		this.user_id = user_id;
-	}
 }

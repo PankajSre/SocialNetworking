@@ -23,13 +23,18 @@
 <link href="resources/css/animate.min.css" rel="stylesheet">
 <link href="resources/css/main.css" rel="stylesheet">
 <link href="resources/css/responsive.css" rel="stylesheet">
+<link href="resources/css/Freebar.min.css" rel="stylesheet">
 <script src="${pageContext.request.contextPath}/resources/js/jquery.js"></script>
 <script
 	src="${pageContext.request.contextPath}/resources/js/bootstrap.min.js"></script>
+	<script
+	src="${pageContext.request.contextPath}/resources/js/angular.min.js"></script>
 <script
 	src="${pageContext.request.contextPath}/resources/js/jquery.prettyPhoto.js"></script>
 <script
 	src="${pageContext.request.contextPath}/resources/js/jquery.isotope.min.js"></script>
+<script
+	src="${pageContext.request.contextPath}/resources/js/jquery-3.0.0.js"></script>
 <script src="${pageContext.request.contextPath}/resources/js/main.js"></script>
 <script src="${pageContext.request.contextPath}/resources/js/wow.min.js"></script>
 
@@ -47,7 +52,7 @@
 <!--/head-->
 
 <body>
-
+	
 	<header id="header">
 		<div class="top-bar ">
 			<div class="container">
@@ -105,20 +110,29 @@
 				<div class="collapse navbar-collapse navbar">
 					<ul class="nav navbar-nav">
 						<li><a href="${pageContext.request.contextPath}/index">Home</a></li>
-						<li><a href="${pageContext.request.contextPath}/about">About
+						<li><a href="${pageContext.request.contextPath}/aboutPage">About
 								NIIT</a></li>
 						<c:if test="${pageContext.request.userPrincipal.name == 'Pankaj'}">
 							<li><a href="${pageContext.request.contextPath}/allUsers">All
 									User</a>
-							
 						</c:if>
-						<li><a href="${pageContext.request.contextPath}/contact">Contact
+						<li><a href="${pageContext.request.contextPath}/contactPage">Contact
 								Us</a></li>
-								<c:if test="${pageContext.request.userPrincipal.name != null}">
-								<li><a
-								href="${pageContext.request.contextPath}/userProfile">My Profile
-							</a></li>
-							</c:if>
+								<li><a href="${pageContext.request.contextPath}/services">Services</a></li>
+								
+								
+							<c:if test="${pageContext.request.userPrincipal.name != null }">
+							<c:if test="${pageContext.request.userPrincipal.name != 'Pankaj' }">
+							<li><a href="${pageContext.request.contextPath}/cloudCourse">Cloud Course
+									 </a></li>
+									 <li><a href="${pageContext.request.contextPath}/cloudSchedule">My Schedule
+									 </a></li>
+						 </c:if>
+						</c:if>	
+						<c:if test="${pageContext.request.userPrincipal.name != null}">
+							<li><a href="${pageContext.request.contextPath}/userProfile">My
+									Profile </a></li>
+						</c:if>
 						<c:if test="${pageContext.request.userPrincipal.name == 'Pankaj'}">
 							<li><a href="<c:url value="/admin"/>">Admin</a></li>
 						</c:if>
@@ -127,8 +141,21 @@
 					<ul class="nav navbar-nav navbar-right">
 
 						<c:if test="${pageContext.request.userPrincipal.name != null}">
-						<li><img src="<c:url value='/resources/images/${pageContext.request.userPrincipal.name}.png' />" height="20" width="40" class="img-circle img-responsive " /></li>
-							<li><a href="javascript:formSubmit()">Logout</a></li>
+							<li>
+								
+								<li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown"><img
+								src="<c:url value='/resources/images/${pageContext.request.userPrincipal.name}.png' />"
+								height="20" width="40" class="img-circle img-responsive " /></a>
+                            <ul class="dropdown-menu">
+                                <li><a href="userProfile">My Profile</a></li>
+                                <li><a href="editUser">Edit</a></li>
+                                <li><a href="Chat">Chat</a></li>
+                                <li><a href="javascript:formSubmit()">Logout</a></li>
+                            </ul>
+                        </li>
+								
+							
 
 						</c:if>
 						<c:if test="${pageContext.request.userPrincipal.name==null}">
